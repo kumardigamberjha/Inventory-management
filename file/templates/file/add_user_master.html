@@ -1,0 +1,62 @@
+{% extends 'file/basic.html' %}
+
+{% load widget_tweaks %}
+
+{% block style %}
+<style>
+    form {
+        width: 100%;
+    }
+    form label span{
+        font-size: 12px;
+    }
+    form label input{
+        font-size: 12px;
+        height: 2px;
+    }
+    .nav-link{
+        font-size: 12px;
+    }
+</style>
+
+{% endblock style %}
+
+
+{% block content %}
+<!-- User Master -->
+
+<div class="container">
+    <h1 class="text-center fs-1 fw-bold text-primary mt-3 mb-2">Add User</h1>
+    <div class="forms">
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="fname" class="form-label"><span>First Name:</span>
+            </label>
+            <input type="text" name="first_name" class="form-control" id="fname" value="{{data.first_name}}">
+
+
+            <label for="lname" class="form-label">Last Name:
+            </label>
+            <input type="text" name="last_name" id="lname" class="form-control" value="{{data.last_name}}">
+
+            <label for="phn_no" class="form-label">Phone Number:
+            </label>
+            <input type="number" name="phn_no" id="phn_no" class="form-control" value="{{data.phn_no}}">
+
+            <label for="outlook_email" class="form-label">Outlook mail:
+            </label>
+            <input type="text" name="outlook_email" id="outlook_email" class="form-control" value="{{data.outlook_email}}">
+
+            <label for="gmail" class="form-label">Gmail:
+            </label>
+            <input type="text" name="gmail" id="gmail" class="form-control" value="{{data.gmail}}">
+            <br>
+            {% render_field form.departments class="form-select" style="width: 280px; padding: 6px" value="{{data.departments}}" %}
+
+
+            <input type="submit" class="btn btn-outline-success mt-3">
+        </form>
+        <!-- end user master -->
+    </div>
+</div>
+{% endblock content %}

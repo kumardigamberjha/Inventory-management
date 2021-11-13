@@ -1,0 +1,38 @@
+{% extends 'file/basic.html' %}
+
+{% block content %}
+<!-- User Master -->
+<h1>Add Vendor</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- {{vendor_form}} -->
+    <label for="name">
+        <input type="text" name="name" id="name" value="{{data.name}}">
+    </label>
+
+    <label for="contact_person">
+        <input type="text" name="contact_person" id="contact_person" value="{{data.contact_person}}">
+    </label>
+    
+    <label for="number">
+        <input type="number" name="number" id="number" value="{{data.number}}">
+    </label>
+
+    <label for="location">
+        <input type="text" name="location" id="location" value="{{data.location}}">
+    </label>
+
+    <label for="second_contact_person">
+        <input type="text" name="second_contact_person" id="second_contact_person" value="{{data.second_contact_person}}">
+    </label>
+
+    <label for="second_contact_person_number">
+        <input type="text" name="second_contact_person_number" id="second_contact_person_number" value="{{data.second_contact_person_number}}">
+    </label>
+
+    <input type="submit">
+</form>
+<!-- end user master -->
+
+{% endblock content %}

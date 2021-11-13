@@ -1,0 +1,91 @@
+{% extends 'file/basic.html' %}
+
+{% block title %}
+<title>GDPA IT Purchase</title>
+{% endblock title %}
+
+{% load crispy_forms_tags %}
+
+{% block style %}
+<style>
+    .nav-link{
+        font-size: 12px;
+    }
+    .container{
+        margin-top: 15px;
+    }
+</style>
+{% endblock style %}
+
+{% block content %}
+
+<h1 class="text-center fs-1 fw-bold text-success mt-3 mb-2">Issue Item</h1>
+
+    <div class="container mb-3">
+        
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3 row">
+                
+                <label for="stock_id" class="col-sm-4 col-form-label mb-2">Stock ID</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_id" name="purchase" class="form-control-plaintext" readonly value="{{stock.purchase_id}}">
+                </div>
+
+                <label for="stock_item" class="col-sm-4 col-form-label mb-2">Stock Item</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_item" name="purchase_item" class="form-control-plaintext" readonly value="{{stock.req.item}}">
+                </div>
+
+                <label for="stock_brand" class="col-sm-4 col-form-label mb-2">Stock Brand</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_brand" name="purchase_brand" class="form-control-plaintext" readonly value="{{stock.brand}}">
+
+                </div>
+
+                <label for="stock_qty" class="col-sm-4 col-form-label mb-2">Stock Qty</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_qty" name="rec_qty" class="form-control-plaintext" readonly value="{{stock.rec_qty}}">
+                </div>
+                
+                <label for="stock_model" class="col-sm-4 col-form-label mb-2">Stock Model</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_model" name="purchase_model" class="form-control-plaintext" readonly value="{{stock.item_model}}">
+                </div>
+                
+                <label for="stock_capacity" class="col-sm-4 col-form-label mb-2">Stock Capacity</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_capacity" name="purchase_capacity" class="form-control-plaintext" readonly value="{{stock.req.capacity}}">
+                </div>
+
+                <label for="stock_ver" class="col-sm-4 col-form-label mb-2">Stock Version</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_ver" name="purchase_ver" class="form-control-plaintext" readonly value="{{stock.req.version}}">
+                </div>               
+                
+                <label for="stock_sn" class="col-sm-4 col-form-label mb-2">Stock Serial Number</label>
+                <div class="col-md-8">
+                    <input type="text" id="stock_sn" name="purchase_sn" class="form-control-plaintext" readonly value="{{stock.item_serial_number}}">
+                </div>
+
+                <label for="issue_qty" class="col-sm-4 col-form-label mb-2">Issue Qty</label>
+
+                <div class="col-md-8">
+                    <input type="text" id="issue_qty" name="issue_qty" class="form-control-plaintext" value="{{stock.issue_qty}}">
+                    <!-- {{form.issue_qty}} -->
+                </div>
+
+                <label for="stock_user" class="col-sm-4 col-form-label mb-2">Issue to User</label>
+                <div class="col-md-8" id="stock_user">
+                    <select class="form-select form-select-sm" name="Users" id="">
+                        <option value={{form.Users}}</option>
+                    </select>
+                    <!-- {{form.Users}} -->
+                </div>
+                
+
+            <input type="submit" class="mt-3 btn btn-outline-success">
+        </form>
+    </div>
+{% endblock content %}

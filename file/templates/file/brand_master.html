@@ -1,0 +1,15 @@
+{% extends 'file/basic.html' %}
+
+{% block content %}
+<!-- User Master -->
+<h1>Add Brand</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- {{brand_form}} -->
+    <input type="text" name="name" id="" value="{{data.name}}">
+    <input type="submit">
+</form>
+<!-- end user master -->
+
+{% endblock content %}

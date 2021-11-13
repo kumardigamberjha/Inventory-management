@@ -1,0 +1,14 @@
+{% extends 'file/basic.html' %}
+
+{% block content %}
+<!-- User Master -->
+<h1>Add Department Master</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- {{form}} -->
+    <input type="text" name="name" id="" value="{{data.name}}">
+    <input type="submit">
+</form>
+<!-- end user master -->
+
+{% endblock content %}

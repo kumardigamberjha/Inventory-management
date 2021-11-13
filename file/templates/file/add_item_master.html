@@ -1,0 +1,16 @@
+{% extends 'file/basic.html' %}
+
+{% block content %}
+<!-- User Master -->
+<h1>Add Item Master</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- {{item_form}} -->
+    <label for="name">Item:
+        <input type="text" name="name" id="name" value="{{data.name}}">
+    </label>
+    <input type="submit">
+</form>
+<!-- end user master -->
+
+{% endblock content %}
